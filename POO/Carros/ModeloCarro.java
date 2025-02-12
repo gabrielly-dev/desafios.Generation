@@ -34,8 +34,9 @@ public class ModeloCarro {
 		int ano = leitura.nextInt();
 		
 		System.out.println("Qual a fabricante do carro? Digite abaixo: ");
-		String fabricante = leitura.nextLine();
 		leitura.nextLine();
+		String fabricante = leitura.nextLine();
+
 		
 		System.out.println("Qual a velocidade máxima do carro? Digite abaixo: ");
 		int velocidadeMax = leitura.nextInt();
@@ -49,8 +50,8 @@ public class ModeloCarro {
 				+ "Selecione 3 para Etanol\n"
 				+ "Selecione 4 para Gás Natural Veicular (GNV)\n"
 				+ "Selecione 5 para Elétrico");
-		int combustivel = leitura.nextInt();
 		leitura.nextLine();
+		int combustivel = leitura.nextInt();
 		
 
 		
@@ -58,28 +59,46 @@ public class ModeloCarro {
 		double quilometragem = leitura.nextDouble();
 		
 		System.out.println("Qual a chassi do carro? Digite abaixo: ");
-		String chassi = leitura.nextLine();
 		leitura.nextLine();
+		String chassi = leitura.nextLine();
+
 		
 		
 		
 		Carro carro1 = new Carro(cor, modelo, placa, ano, fabricante, velocidadeMax, potenciaMotor, combustivel, quilometragem, chassi);
 		
-		if (combustivel == 1) {
-			System.out.println("Gasolina");
-		} else if(combustivel == 2) {
-			System.out.println("Gasolina");
-		} else if(combustivel == 3) {
-			System.out.println("Gasolina");
-		} else if (combustivel == 4) {
-			System.out.println("Gasolina");
-		} else if(combustivel == 5) {
-			System.out.println("Gasolina");
+		String saidaCombustivel = "";
+		
+		switch(combustivel) {
+		case 1:
+			saidaCombustivel = "Gasolina";
+			break;
+		case 2: 
+			saidaCombustivel = "Diesel";
+			break;
+		case 3:
+			saidaCombustivel = "Etanol";
+			break;
+		case 4:
+			saidaCombustivel = "Gás Natural Veicular (GNV)";
+			break;
+		case 5:
+			saidaCombustivel = "Elétrico";
+			break;
 		}
 		
-		System.out.println(carro1.getCor() + " " + carro1.getModelo() + " " + carro1.getPlaca() + " " + carro1.getAno() + " " + carro1.getFabricante() + " " + carro1.getVelocidadeMaxima() + " " + carro1.getPotenciaMotor() + " " + carro1.getTipoCombustivel() + " " + carro1.getQuilometragem() + " " + carro1.getChassi());
-		
-		
+		System.out.println(
+						"Modelo: " + carro1.getModelo() + "\n" + 
+						"Fabricante: " + carro1.getFabricante() + "\n" +
+						"Cor: " + carro1.getCor() + "\n" +
+						"Ano: " + carro1.getAno() + "\n"  +
+						"Velocidade Máxima: " + carro1.getVelocidadeMaxima() + "\n" +
+						"Potência do Motor: " +  carro1.getPotenciaMotor() + "\n" +
+						"Tipo de Combustível: " + saidaCombustivel + "\n" +
+						"Quilometragem: " + carro1.getQuilometragem() + "\n" +
+						"Chassi: " + carro1.getChassi() + "\n" +
+						"Placa: " + carro1.getPlaca()
+						);
 
 	}
 
